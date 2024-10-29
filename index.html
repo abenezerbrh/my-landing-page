@@ -73,10 +73,12 @@
             flex-direction: column;
             align-items: center;
         }
-        #header p{
+
+        #header p {
             color: rgb(88, 86, 86);
         }
-        #about{
+
+        #about {
             margin: 20px;
             width: 75%;
             border-radius: 20px;
@@ -84,33 +86,47 @@
             text-align: justify;
             background-color: #E5E1DA;
         }
-        #about h1{
+
+        #about h1 {
             text-align: left;
         }
-        #home{
+
+        #home {
             display: flex;
             flex-direction: row;
             align-items: center;
             gap: 50px;
             justify-content: space-around;
         }
+
+        #image1 {
+            transition: transform 0.3s ease;
+        }
+
+        #image1:hover {
+            transform: scale(1.1);
+        }
+
+
         @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1A1A1A; /* Dark background color */
-        color: #E0E0E0; /* Light text color */
-    }
+            body {
+                background-color: #1A1A1A;
+                /* Dark background color */
+                color: #E0E0E0;
+                /* Light text color */
+            }
 
-    #links {
-        background-color: #333333; /* Darker background for links */
-    }
+            #links {
+                background-color: #333333;
+                /* Darker background for links */
+            }
 
-    #about {
-        background-color: #444444;
-    }
+            #about {
+                background-color: #444444;
+            }
 
-    /* Other styles for dark mode here */
-}
-
+            /* Other styles for dark mode here */
+        }
     </style>
 </head>
 
@@ -126,24 +142,25 @@
         </ul>
     </div>
     <div id="home">
-    <div id="header">
+        <div id="header">
             <a href="index.html"><img id="image1" src="images/pic01.jpg" alt="" /></a>
             <p>Aspiring Software Engineer</p>
-    </div>
-    <div id="me">
-        <h1>Hi, I am Abenezer</h1>
-        <p>Passionate about learning new technologies, coding, and solving problems.
-        </p>
-    </div>
+        </div>
+        <div id="me">
+            <h1>Hi, I am Abenezer</h1>
+            <p>Passionate about learning new technologies, coding, and solving problems.
+            </p>
+        </div>
     </div>
     <div id="about">
         <h1>About me</h1>
-        <p>I'm currently a second-year Software Engineering student at Seneca Polytechnic, driven by a deep passion for 
-            learning and mastering new technologies. I find immense satisfaction in coding and solving complex problems, 
-            constantly pushing myself to find innovative solutions. Beyond technical skills, I thrive in collaborative 
-            environments where teamwork is key. Working with others allows me to exchange ideas, share experiences, 
-            and grow both personally and professionally. I'm excited about the endless possibilities in software engineering
-             and look forward to contributing to projects that have real-world impact.</p>
+        <p>I'm currently a second-year Software Engineering student at Seneca Polytechnic, driven by a deep passion for
+            learning and mastering new technologies. I find immense satisfaction in coding and solving complex problems,
+            constantly pushing myself to find innovative solutions. Beyond technical skills, I thrive in collaborative
+            environments where teamwork is key. Working with others allows me to exchange ideas, share experiences,
+            and grow both personally and professionally. I'm excited about the endless possibilities in software
+            engineering
+            and look forward to contributing to projects that have real-world impact.</p>
     </div>
 </body>
 
