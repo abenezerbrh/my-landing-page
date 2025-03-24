@@ -11,29 +11,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=M+PLUS+1+Code:wght@100..700&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=M+PLUS+1+Code:wght@100..700&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+
+        }
+        html, body {
             font-family: "Agdasima", Helvetica, sans-serif;
-            font-size: 20px;
-            background-color: #F8F6F4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-size: 25px;
+            background-color: #003135;
             width: 100%;
+            height: 100vh;
             text-align: center;
-            padding: 20px
+            color: #afdde5;
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
         }
 
         #links {
-            background-color: #E5E1DA;
+            background-color: #024950;
             display: flex;
             flex-direction: row;
             border-radius: 10px;
-            width: 90%;
+            width: 100%;
             justify-content: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000; /* Ensures navbar stays on top */
+            padding: 10px 0;
+
         }
 
         #links ul {
@@ -46,28 +57,32 @@
 
         #links a {
             text-decoration: none;
-            color: black;
-            transition: font-weight 0.3s ease, color 0.3s ease;
-
+            color: #afdde5;
+            transition: transform 0.3s ease-in-out, color 0.2s ease-in-out;
+            display: inline-block;
         }
 
         #links a:hover {
-            font-weight: bold;
+            transform: scale(1.05);
+            color: #33d1de;
         }
 
         #image1 {
             border-radius: 100px;
             width: 200px;
             height: auto;
+            transition: transform 0.3s ease;
         }
-
+        #image1:hover {
+            transform: scale(0.9);
+        }
         #me {
             width: 90%;
             padding: 20px;
             display: flex;
             flex-direction: column;
             border-radius: 10px;
-
+            gap: 20px;
         }
 
         #header {
@@ -75,13 +90,26 @@
             justify-content: center;
             flex-direction: column;
             align-items: center;
-        }
-
-        #header p {
-            color: rgb(88, 86, 86);
+            align-items: center;
         }
 
         #about {
+            width: 100%;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: justify;
+            background-color: #024940;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        #about h1 {
+            text-align: left;
+        }
+        #skills {
             margin: 20px;
             width: 75%;
             border-radius: 20px;
@@ -90,51 +118,77 @@
             background-color: #E5E1DA;
         }
 
-        #about h1 {
+        #skills h1 {
             text-align: left;
         }
 
         #home {
+            padding-top: 70px;
             display: flex;
             flex-direction: row;
             align-items: center;
             gap: 50px;
             justify-content: space-around;
+            margin-top: 70px;
         }
 
-        #image1 {
-            transition: transform 0.3s ease;
+       
+        #skillset img{
+            height: 50px;
+            width: auto;
         }
-
-        #image1:hover {
+        #skillset{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .skills{
+            background-color: #afdde5;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 800;
+            width: 120px;
+            border-radius: 5px;
+            transition: transform 0.2s ease-in-out;
+            color: #003135;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        .skills:hover{
             transform: scale(1.1);
         }
-
-/* 
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #1A1A1A;
-                /* Dark background color */
-                /*color: #E0E0E0;
-                /* Light text color */
-           /* }
-
-            /*#links {
-                background-color: #333333;
-                /* Darker background for links */
-            }
-
-            /*#about {
-                background-color: #444444;
-            }
-
-            /* Other styles for dark mode here */
-       /* } */
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            scroll-snap-align: start;
+            justify-content: center;
+        }
+        #container {
+        display: flex;
+        flex-direction: column;
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        height: 100vh;
+        overflow: hidden; /* Hide the default scroll behavior */
+        overflow-y: auto;
+        }
+        #about > p {
+            width: 80%;
+        }
+        #skills-container{
+            background-color: #003135;
+            font-size: 20px;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Abenezer Balcha</h1>
     <div id="links">
         <ul>
             <li><a href="https://www.linkedin.com/in/abenezer-balcha-0594132b6/" target="_blank">LinkedIn</a></li>
@@ -144,18 +198,19 @@
             <li><a href="" target="_blank">Contact</a></li>
         </ul>
     </div>
-    <div id="home">
-        <div id="header">
-            <a href="index.html"><img id="image1" src="images/pic01.jpg" alt="" /></a>
-            <p>Aspiring Software Engineer</p>
-        </div>
+    <section id="home">
+        
         <div id="me">
-            <h1>Hi, I am Abenezer</h1>
-            <p>Passionate about learning new technologies, coding, and solving problems.
+                <a href="index.html"><img id="image1" src="images/pic01.jpg" alt="" /></a>
+                <h1>Hi, I am Abenezer Balcha</h1>
+                <p>Aspiring Software Engineer</p>
+                <div id="header">
+                <p>Passionate about learning new technologies, coding, and solving problems.
+                </div>
             </p>
         </div>
-    </div>
-    <div id="about">
+    </section>
+    <section id="about">
         <h1>About me</h1>
         <p>I'm currently a second-year Software Engineering student at Seneca Polytechnic, driven by a deep passion for
             learning and mastering new technologies. I find immense satisfaction in coding and solving complex problems,
@@ -164,7 +219,42 @@
             and grow both personally and professionally. I'm excited about the endless possibilities in software
             engineering
             and look forward to contributing to projects that have real-world impact.</p>
+    </section>
+    <section id="skills-container">
+    <h1>Skills</h1>
+    <div id="skillset">
+        <div class="skills">
+        <p>Python</p>
+            <img src="images/python.svg">
+        </div>
+        <div class="skills">   
+            <p>HTML</p>     
+            <img src="images/html.svg">
+        </div>
+        <div class="skills">
+            <p>CSS</p>
+            <img src="images/css.svg">
+        </div>
+        <div class="skills">
+            <p>C++</p>
+            <img src="images/c++.svg">
+        </div>
+        <div class="skills">
+            <p>C</p>
+            <img src="images/c.svg">
+
+        </div>
+        <div class="skills">
+            <p>Javascript</p>
+            <img src="images/javascript.svg">
+        </div>
+        <div class="skills">
+            <p>SQL</p>
+            <img src="images/sql.svg">
+        </div>
     </div>
+    </section>
+</div>
 </body>
 
 </html>
