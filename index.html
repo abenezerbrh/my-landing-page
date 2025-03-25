@@ -44,7 +44,10 @@
             top: 0;
             z-index: 1000; /* Ensures navbar stays on top */
             padding: 10px 0;
-
+            align-items: center;
+        }
+        #links img {
+            height: 40px;
         }
 
         #links ul {
@@ -185,17 +188,57 @@
             background-color: #003135;
             font-size: 20px;
         }
+        #projects{
+            gap: 15px;
+        }
+        #projects img {
+            height: 150px;
+            width: auto;
+            border-radius: 20px;
+        }
+        #project-container{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            background-color: #024950;
+            width: 250px;
+            transition: transform 0.3s ease-in-out;
+            overflow: hidden;
+            border-radius: 20px;
+            padding-top: 5px;
+        }
+        #project-container:hover{
+            transform: scale(1.05);
+        }
+        #project-buttons{
+            text-decoration: none;
+            color: #afdde5;
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+            display: inline-block;
+            background-color: #024950;
+            width: 50%;
+            border-radius: 10px;
+        }
+        #project-buttons:hover{
+            transform: scale(1.05);
+            color: #33d1de;
+        }
+        #project-buttons img{
+            height: 30px;
+        }
     </style>
 </head>
 
 <body>
     <div id="links">
         <ul>
-            <li><a href="https://www.linkedin.com/in/abenezer-balcha-0594132b6/" target="_blank">LinkedIn</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="https://www.linkedin.com/in/abenezer-balcha-0594132b6/" target="_blank"><img src ="images/linkedin.svg" ></a></li>
             <li><a href="https://docs.google.com/document/d/1bAfs6vL82SmvA2n49OncHE5JQYlx1Humo9JlW6RFnCM/edit?usp=sharing"
                     target="_blank">Resume</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="" target="_blank">Contact</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </div>
     <section id="home">
@@ -212,7 +255,7 @@
     </section>
     <section id="about">
         <h1>About me</h1>
-        <p>I'm currently a second-year Software Engineering student at Seneca Polytechnic, driven by a deep passion for
+        <p>I'm currently a <strong>second-year Software Engineering student at Seneca Polytechnic</strong>, driven by a deep passion for
             learning and mastering new technologies. I find immense satisfaction in coding and solving complex problems,
             constantly pushing myself to find innovative solutions. Beyond technical skills, I thrive in collaborative
             environments where teamwork is key. Working with others allows me to exchange ideas, share experiences,
@@ -255,6 +298,14 @@
     </div>
     </section>
 </div>
+<section id="projects">
+    <h1>My Projects</h1>
+    <div id="project-container">
+    <img src="images/todo-project.png">
+    <a id="project-buttons" href="https://github.com/abenezerbrh/To-do" target="_blank">View Code <img src="images/github.svg"></a>
+    <a id="project-buttons" href="https://abenezerbal.pythonanywhere.com/" target="_blank">Try it out <img src="images/rocket.svg"></a>
+    </div>
+</section>
 </body>
 
 </html>
