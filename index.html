@@ -7,7 +7,6 @@
     <title>Abenezer Balcha | Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
-
     <style>
         :root {
             --bg-0: #0a0014;
@@ -21,7 +20,7 @@
             --brand-2: #b388ff;
             --accent: #7a1cac;
             --gold: #d1b3ff;
-            --card: #ffffff0d;
+            --card: #0101010d;
             /* white@6% */
             --shadow: 0 4px 20px rgba(0, 0, 0, .3);
         }
@@ -394,7 +393,9 @@
         .project-img {
             width: 100%;
             height: 100%;
-            object-fit: cover
+            object-fit: contain;
+            background-color: #220035; /* optional: adds contrast behind transparent PNGs */
+            padding: 1px; 
         }
 
         .badge {
@@ -817,6 +818,27 @@
                         <div class="project-links" aria-label="Word Guess links">
                             <a class="btn-small" href="https://github.com/abenezerbrh/word-guessing-game"
                                 target="_blank" rel="noopener">View Code</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Pomodoro Timer -->
+                <article class="project-card">
+                    <div class="thumb-wrap">
+                        <span class="badge">HTML • CSS • JavaScript</span>
+                        <img class="project-img" src="images/pommy.png"
+                            alt="Screenshot of Pomodoro Timer Web App" loading="lazy" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Pommy</h3>
+                        <p class="project-desc">
+                            An aesthetic productivity pomodoro timer with adjustable focus and break sessions and theme
+                            switching. 
+                        </p>
+                        <div class="project-links" aria-label="Pomodoro Timer links">
+                            <a class="btn-small" href="https://github.com/abenezerbrh/pommy" target="_blank"
+                                rel="noopener">View Code</a>
+                            <a class="btn-small btn-ghost" href="https://abenezerbrh.github.io/pommy/"
+                                target="_blank" rel="noopener">Try It Out</a>
                         </div>
                     </div>
                 </article>
