@@ -366,21 +366,36 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 28px
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
         }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
 
         .project-card {
             background: var(--card);
             border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: transform .25s ease, box-shadow .25s ease
+            transition: transform .25s ease, box-shadow .25s ease;
         }
 
         .project-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 8px 28px rgba(255, 255, 255, .1)
+            box-shadow: 0 8px 28px rgba(255, 255, 255, 0.1)
         }
 
         .thumb-wrap {
@@ -394,8 +409,8 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            background-color: #220035; /* optional: adds contrast behind transparent PNGs */
-            padding: 1px; 
+            background-color: #220035;
+            /* padding: 1px; */
         }
 
         .badge {
@@ -825,24 +840,42 @@
                 <article class="project-card">
                     <div class="thumb-wrap">
                         <span class="badge">HTML • CSS • JavaScript</span>
-                        <img class="project-img" src="images/pommy.png"
-                            alt="Screenshot of Pomodoro Timer Web App" loading="lazy" />
+                        <img class="project-img" src="images/pommy.png" alt="Screenshot of Pomodoro Timer Web App"
+                            loading="lazy" />
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Pommy</h3>
                         <p class="project-desc">
                             An aesthetic productivity pomodoro timer with adjustable focus and break sessions and theme
-                            switching. 
+                            switching.
                         </p>
                         <div class="project-links" aria-label="Pomodoro Timer links">
                             <a class="btn-small" href="https://github.com/abenezerbrh/pommy" target="_blank"
                                 rel="noopener">View Code</a>
-                            <a class="btn-small btn-ghost" href="https://abenezerbrh.github.io/pommy/"
-                                target="_blank" rel="noopener">Try It Out</a>
+                            <a class="btn-small btn-ghost" href="https://abenezerbrh.github.io/pommy/" target="_blank"
+                                rel="noopener">Try It Out</a>
                         </div>
                     </div>
                 </article>
-
+                <article class="project-card">
+                    <div class="thumb-wrap">
+                        <span class="badge">Flask • JavaScript</span>
+                        <img class="project-img" src="images/flight.png" alt="Screenshot of Airline-Travel-Assistant"
+                            loading="lazy" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Airline-Travel-Assistant</h3>
+                        <p class="project-desc">
+                            A modern travel booking platform that lets users easily search and book flights.
+                        </p>
+                        <div class="project-links" aria-label="Airline-Travel-Assistant links">
+                            <a class="btn-small" href="https://github.com/ZunayedAhmed7/Airline-Travel-Assistant"
+                                target="_blank" rel="noopener">View Code</a>
+                            <a class="btn-small btn-ghost" href="https://zunahmed79.pythonanywhere.com/" target="_blank"
+                                rel="noopener">Try It Out</a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
