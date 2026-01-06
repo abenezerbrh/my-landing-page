@@ -675,6 +675,92 @@
         :target {
             scroll-margin-top: 72px
         }
+
+        /* =======================
+   RELEVANT COURSEWORK
+   ======================= */
+
+        .coursework-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--bg-grad-1), var(--bg-grad-2));
+            color: var(--txt);
+        }
+
+        .coursework-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .coursework-section h2 {
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .coursework-section p {
+            color: var(--txt-soft);
+            font-size: 1.1rem;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .course-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(135deg, var(--brand), transparent);
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .course-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(199, 125, 255, 0.35);
+        }
+
+        .course-code {
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--brand-2);
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .course-title {
+            font-size: 1.25rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .course-description {
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: var(--txt-soft);
+        }
+
+        @media (max-width: 768px) {
+            .coursework-section {
+                padding: 80px 16px;
+            }
+        }
     </style>
 </head>
 
@@ -789,6 +875,127 @@
     <!-- Font Awesome & Devicon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <section class="coursework-section" id="coursework">
+    <div class="container">
+        <div class="section-header">
+            <h2>Relevant Coursework</h2>
+            <p>Upper-year and core courses shaping my software engineering foundation</p>
+        </div>
+
+        <div class="courses-grid">
+
+            <div class="course-card">
+                <div class="course-code">SEP200</div>
+                <div class="course-title">Object-Oriented Programming</div>
+                <div class="course-description">
+                    Core object-oriented concepts including encapsulation, inheritance, polymorphism,
+                    UML modeling, and use of the C++ Standard Template Library.
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">BTD210</div>
+                <div class="course-title">Database Design Principles</div>
+                <div class="course-description">
+                    Relational database design using ER diagrams and normalization, with SQL implementation
+                    for querying, data manipulation, and schema development.
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">SEP300</div>
+                <div class="course-title">Software Development & Deployment</div>
+                <div class="course-description">
+                    Multi-class application design with unit testing, database connectivity,
+                    application security, and deployment practices.
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">BTP500</div>
+                <div class="course-title">Data Structures & Algorithms</div>
+                <div class="course-description">
+                    Implementation and analysis of core data structures and algorithms,
+                    emphasizing efficiency, computational complexity, and graph-based systems.
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">SEP400</div>
+                <div class="course-title">Operating Systems</div>
+                <div class="course-description">
+                    Operating system fundamentals including process scheduling, concurrency,
+                    memory management, inter-process communication, and system security.
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">SEA400</div>
+                <div class="course-title">Artificial Intelligence</div>
+                <div class="course-description">
+                    AI techniques including state-space search, knowledge representation,
+                    logic-based reasoning, and probabilistic inference.
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">SEA500</div>
+                <div class="course-title">Introduction to Data Mining</div>
+                <div class="course-description">
+                    Data analysis using classification, clustering, and association rules,
+                    with emphasis on data cleaning, model evaluation, and result interpretation.
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">SED500</div>
+                <div class="course-title">Introduction to Software Engineering</div>
+                <div class="course-description">
+                    End-to-end software development lifecycle including requirements analysis,
+                    system design, testing strategies, deployment, and maintenance.
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">SEE500</div>
+                <div class="course-title">Systems Requirements Engineering</div>
+                <div class="course-description">
+                    Requirements elicitation, modeling, validation, and management using
+                    agile and waterfall methodologies with risk and scope control.
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">SEH500</div>
+                <div class="course-title">Microprocessors & Computer Architecture</div>
+                <div class="course-description">
+                    CPU architecture, assembly programming, embedded systems,
+                    finite state machines, and hardware-software integration.
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">SED505</div>
+                <div class="course-title">Design Patterns</div>
+                <div class="course-description">
+                    Object-oriented and machine-learning design patterns, including GoF patterns,
+                    architectural patterns, and reusable software solutions.
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">BTS535</div>
+                <div class="course-title">Software Project Management</div>
+                <div class="course-description">
+                    Agile and classical project management practices including Scrum, Kanban,
+                    stakeholder analysis, budgeting, risk management, and quality assurance.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 
 
     <!-- PROJECTS -->
