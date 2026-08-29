@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Abenezer Balcha | Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
@@ -19,15 +22,25 @@
             --border: #2a2a2a;
             --border-light: #333333;
             --txt: #f0f0f0;
-            --txt-muted: #888888;
-            --txt-dim: #555555;
+            --txt-muted: #909090;
+            --txt-dim: #7d7d7d;
             --accent: #e8e8e8;
             --highlight: #ffffff;
             --tag-bg: #1e1e1e;
+            --focus: #7fb0ff;
         }
 
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'DM Sans', sans-serif;
@@ -48,20 +61,45 @@
             z-index: 999;
         }
 
-        a { color: inherit; text-decoration: none; }
-        img { max-width: 100%; display: block; }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--focus);
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
 
         .skip-link {
-            position: absolute; left: -999px; top: -999px;
-            background: var(--highlight); color: #000;
-            padding: .5rem 1rem; border-radius: 4px; font-weight: 600; z-index: 1000;
+            position: absolute;
+            left: -999px;
+            top: -999px;
+            background: var(--highlight);
+            color: #000;
+            padding: .5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            z-index: 1000;
         }
-        .skip-link:focus { left: 1rem; top: 1rem; }
+
+        .skip-link:focus {
+            left: 1rem;
+            top: 1rem;
+        }
 
         /* ─── NAV ─── */
         nav {
             position: fixed;
-            top: 0; left: 0; width: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
             background: rgba(12, 12, 12, 0.85);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
@@ -79,12 +117,16 @@
             letter-spacing: 0.05em;
             padding: 18px 0;
         }
-        .nav-logo span { color: var(--txt); }
+
+        .nav-logo span {
+            color: var(--txt);
+        }
 
         nav ul {
             list-style: none;
             display: flex;
             gap: 0;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -102,15 +144,24 @@
         nav a::after {
             content: '';
             position: absolute;
-            bottom: 0; left: 14px; right: 14px;
+            bottom: 0;
+            left: 14px;
+            right: 14px;
             height: 1px;
             background: var(--txt);
             transform: scaleX(0);
             transition: transform 0.2s ease;
         }
 
-        nav a:hover, nav a[aria-current="page"] { color: var(--txt); }
-        nav a:hover::after, nav a[aria-current="page"]::after { transform: scaleX(1); }
+        nav a:hover,
+        nav a[aria-current="page"] {
+            color: var(--txt);
+        }
+
+        nav a:hover::after,
+        nav a[aria-current="page"]::after {
+            transform: scaleX(1);
+        }
 
         .nav-social {
             display: flex;
@@ -119,14 +170,18 @@
         }
 
         .social-icon {
-            width: 34px; height: 34px;
-            display: flex; align-items: center; justify-content: center;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 6px;
             border: 1px solid var(--border);
             color: var(--txt-muted);
             font-size: 0.9rem;
             transition: all 0.2s ease;
         }
+
         .social-icon:hover {
             border-color: var(--border-light);
             color: var(--txt);
@@ -142,10 +197,15 @@
             padding: 120px 2.5rem 80px;
         }
 
-        .container { width: min(1100px, 100%); margin-inline: auto; }
+        .container {
+            width: min(1100px, 100%);
+            margin-inline: auto;
+        }
 
         /* ─── HOME ─── */
-        #home { background: var(--bg); }
+        #home {
+            background: var(--bg);
+        }
 
         .home-grid {
             display: grid;
@@ -210,7 +270,11 @@
             border-radius: 6px;
             transition: all 0.2s ease;
         }
-        .btn-primary:hover { background: var(--highlight); transform: translateY(-1px); }
+
+        .btn-primary:hover {
+            background: var(--highlight);
+            transform: translateY(-1px);
+        }
 
         .btn-secondary {
             display: inline-flex;
@@ -226,7 +290,12 @@
             border-radius: 6px;
             transition: all 0.2s ease;
         }
-        .btn-secondary:hover { border-color: var(--txt); color: var(--txt); transform: translateY(-1px); }
+
+        .btn-secondary:hover {
+            border-color: var(--txt);
+            color: var(--txt);
+            transform: translateY(-1px);
+        }
 
         .home-img-wrap {
             display: flex;
@@ -237,19 +306,38 @@
 
         .home-img {
             width: min(420px, 100%);
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
             border-radius: 50%;
             filter: grayscale(30%) contrast(1.05);
             transition: filter 0.3s ease, transform 0.3s ease;
         }
-        .home-img:hover { filter: grayscale(0%) contrast(1.1); transform: scale(1.02); }
+
+        .home-img:hover {
+            filter: grayscale(0%) contrast(1.1);
+            transform: scale(1.02);
+        }
 
         @keyframes rise {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to   { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         /* ─── DIVIDER LINE ─── */
@@ -275,12 +363,17 @@
 
         .about-img {
             width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
             border-radius: 12px;
             filter: grayscale(60%) contrast(1.1);
             transition: filter 0.4s ease;
             border: 1px solid var(--border);
         }
-        .about-img:hover { filter: grayscale(0%); }
+
+        .about-img:hover {
+            filter: grayscale(0%);
+        }
 
         .section-label {
             font-family: 'DM Mono', monospace;
@@ -306,7 +399,10 @@
             color: var(--txt-muted);
         }
 
-        .about-text strong { color: var(--txt); font-weight: 500; }
+        .about-text strong {
+            color: var(--txt);
+            font-weight: 500;
+        }
 
         .stats-grid {
             display: grid;
@@ -323,7 +419,10 @@
             padding: 24px 20px;
             transition: background 0.2s ease;
         }
-        .stat-card:hover { background: var(--bg-3); }
+
+        .stat-card:hover {
+            background: var(--bg-3);
+        }
 
         .stat-number {
             font-family: 'DM Mono', monospace;
@@ -341,24 +440,129 @@
             color: var(--txt-dim);
         }
 
-        /* ─── SKILLS ─── */
-        #skills {
+        /* ─── EXPERIENCE ─── */
+        #experience {
             background: var(--bg);
-            text-align: center;
             border-bottom: 1px solid var(--border);
         }
 
-        .skills-header {
-            margin-bottom: 3rem;
+        #experience .container {
+            width: min(900px, 100%);
         }
 
-        .skills-grid {
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 2.5rem;
+        }
+
+        .experience-card {
+            background: var(--bg-2);
+            padding: 28px 30px;
+            transition: background 0.2s ease;
+        }
+
+        .experience-card:hover {
+            background: var(--bg-3);
+        }
+
+        .experience-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .experience-head h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--txt);
+        }
+
+        .experience-dates {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--txt-dim);
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+
+        .experience-summary {
+            font-size: 0.9rem;
+            color: var(--txt-muted);
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .experience-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .experience-bullets li {
+            font-size: 0.86rem;
+            color: var(--txt-muted);
+            line-height: 1.6;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .experience-bullets li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--txt-dim);
+        }
+
+        /* ─── SKILLS ─── */
+        #skills {
+            background: var(--bg);
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        #skills .container {
+            width: min(900px, 100%);
+        }
+
+        .skills-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .skill-group {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 20px;
+            align-items: start;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skill-group:last-child {
+            border-bottom: none;
+        }
+
+        .skill-group-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--txt-dim);
+            padding-top: 8px;
+        }
+
+        .skill-pills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            max-width: 700px;
-            margin: 0 auto;
+            gap: 8px;
         }
 
         .skill-pill {
@@ -388,7 +592,7 @@
             transform: translateY(-2px);
         }
 
-        /* ─── COURSEWORK ─── */
+        /* ─── COURSEWORK / EDUCATION ─── */
         #coursework {
             background: var(--bg-1);
             border-top: 1px solid var(--border);
@@ -397,9 +601,22 @@
             padding: 100px 2.5rem;
         }
 
+        .education-degree {
+            margin-top: -0.6rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--txt-muted);
+            line-height: 1.7;
+        }
+
+        .education-degree strong {
+            color: var(--txt);
+            font-weight: 500;
+        }
+
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 1px;
             border: 1px solid var(--border);
             border-radius: 12px;
@@ -417,7 +634,9 @@
         .course-card::after {
             content: '';
             position: absolute;
-            top: 0; bottom: 0; left: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
             width: 2px;
             background: var(--txt);
             transform: scaleY(0);
@@ -425,8 +644,13 @@
             transition: transform 0.3s ease;
         }
 
-        .course-card:hover { background: var(--bg-3); }
-        .course-card:hover::after { transform: scaleY(1); }
+        .course-card:hover {
+            background: var(--bg-3);
+        }
+
+        .course-card:hover::after {
+            transform: scaleY(1);
+        }
 
         .course-code {
             font-family: 'DM Mono', monospace;
@@ -472,11 +696,31 @@
             background: var(--bg-2);
             transition: background 0.2s ease;
         }
-        .project-featured:hover { background: var(--bg-3); }
+
+        .project-featured:hover {
+            background: var(--bg-3);
+        }
+
+        .project-featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--txt);
+            background: var(--bg-3);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            padding: 4px 9px;
+            margin-bottom: 14px;
+            width: fit-content;
+        }
 
         .project-row {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 1px;
         }
 
@@ -485,7 +729,10 @@
             transition: background 0.2s ease;
             overflow: hidden;
         }
-        .project-card:hover { background: var(--bg-3); }
+
+        .project-card:hover {
+            background: var(--bg-3);
+        }
 
         .project-thumb {
             aspect-ratio: 16/9;
@@ -570,13 +817,20 @@
             background: var(--txt);
             color: var(--bg);
         }
-        .link-btn-solid:hover { background: var(--highlight); }
+
+        .link-btn-solid:hover {
+            background: var(--highlight);
+        }
 
         .link-btn-ghost {
             border: 1px solid var(--border-light);
             color: var(--txt-muted);
         }
-        .link-btn-ghost:hover { border-color: var(--txt); color: var(--txt); }
+
+        .link-btn-ghost:hover {
+            border-color: var(--txt);
+            color: var(--txt);
+        }
 
         /* ─── CONTACT ─── */
         #contact {
@@ -615,14 +869,20 @@
             margin-bottom: 10px;
             transition: color 0.2s ease;
         }
-        .contact-email-link:hover { color: var(--highlight); }
+
+        .contact-email-link:hover {
+            color: var(--highlight);
+        }
 
         .contact-li-link {
             font-size: 0.88rem;
             color: var(--txt-muted);
             transition: color 0.2s ease;
         }
-        .contact-li-link:hover { color: var(--txt); }
+
+        .contact-li-link:hover {
+            color: var(--txt);
+        }
 
         form {
             display: flex;
@@ -650,7 +910,8 @@
             color: var(--txt-dim);
         }
 
-        input, textarea {
+        input,
+        textarea {
             background: var(--bg-2);
             border: 1px solid var(--border);
             border-radius: 7px;
@@ -661,15 +922,22 @@
             transition: border 0.2s ease, background 0.2s ease;
         }
 
-        input::placeholder, textarea::placeholder { color: var(--txt-dim); }
+        input::placeholder,
+        textarea::placeholder {
+            color: var(--txt-dim);
+        }
 
-        input:focus, textarea:focus {
+        input:focus,
+        textarea:focus {
             outline: none;
             border-color: var(--border-light);
             background: var(--bg-3);
         }
 
-        textarea { resize: vertical; min-height: 120px; }
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
 
         .submit-btn {
             align-self: flex-start;
@@ -684,7 +952,11 @@
             cursor: pointer;
             transition: background 0.2s ease, transform 0.2s ease;
         }
-        .submit-btn:hover { background: var(--highlight); transform: translateY(-1px); }
+
+        .submit-btn:hover {
+            background: var(--highlight);
+            transform: translateY(-1px);
+        }
 
         /* ─── FOOTER ─── */
         footer {
@@ -716,38 +988,96 @@
             letter-spacing: 0.04em;
             transition: color 0.2s ease;
         }
-        .footer-right a:hover { color: var(--txt); }
+
+        .footer-right a:hover {
+            color: var(--txt);
+        }
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 900px) {
-            nav { padding: 0 1.5rem; }
-            .nav-logo { display: none; }
-            nav a { padding: 16px 10px; font-size: 0.75rem; }
-            section { padding: 100px 1.5rem 60px; }
+            nav {
+                padding: 0 1.5rem;
+            }
 
-            .home-grid, .about-grid, .contact-grid {
+            .nav-logo {
+                display: none;
+            }
+
+            nav a {
+                padding: 16px 10px;
+                font-size: 0.75rem;
+            }
+
+            section {
+                padding: 100px 1.5rem 60px;
+            }
+
+            .home-grid,
+            .about-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
 
-            .home-img-wrap { order: -1; }
-            .home-img { max-width: 280px; margin: 0 auto; }
+            .home-img-wrap {
+                order: -1;
+            }
 
-            .project-featured { grid-template-columns: 1fr; }
-            .project-row { grid-template-columns: 1fr; }
+            .home-img {
+                max-width: 280px;
+                margin: 0 auto;
+            }
 
-            footer { flex-direction: column; gap: 12px; text-align: center; }
+            .project-featured {
+                grid-template-columns: 1fr;
+            }
+
+            .project-row {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-group {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .experience-head {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
         }
 
         @media (max-width: 600px) {
-            nav ul { gap: 0; }
-            nav a { padding: 16px 8px; font-size: 0.72rem; }
-            .form-row { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr 1fr; }
+            nav ul {
+                gap: 0;
+                justify-content: center;
+            }
+
+            nav a {
+                padding: 14px 6px;
+                font-size: 0.68rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            * { animation: none !important; transition: none !important; }
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
         }
     </style>
 </head>
@@ -759,20 +1089,24 @@
         <div class="nav-logo">ab.<span>dev</span></div>
         <ul>
             <li><a href="#home" aria-current="page">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#coursework">Courses</a></li>
-            <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-social">
-            <a href="https://github.com/abenezerbrh" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+            <a href="https://github.com/abenezerbrh" target="_blank" rel="noopener" class="social-icon"
+                aria-label="GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/abenezerbalcha" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/abenezerbalcha" target="_blank" rel="noopener" class="social-icon"
+                aria-label="LinkedIn">
                 <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://drive.google.com/file/d/1zr42w556R_aWiC3lhsdtLDWbJ4KPchQX/view?usp=sharing" target="_blank" rel="noopener" class="social-icon" aria-label="Resume">
+            <a href="https://drive.google.com/file/d/1zr42w556R_aWiC3lhsdtLDWbJ4KPchQX/view?usp=sharing" target="_blank"
+                rel="noopener" class="social-icon" aria-label="Resume">
                 <i class="fas fa-file-alt"></i>
             </a>
         </div>
@@ -784,8 +1118,10 @@
             <div class="home-grid">
                 <div>
                     <div class="home-eyebrow">Hey, I'm Abenezer —</div>
-                    <h1 class="home-title" id="home-title">Aspiring<br><em>Software Engineer</em></h1>
-                    <p class="home-desc">Transforming ideas into elegant, efficient code — building creative, reliable software that solves real-world problems.</p>
+                    <h1 class="home-title" id="home-title">Software Engineering<br><em>Student</em></h1>
+                    <p class="home-desc">Fourth-year Software Engineering student with two internship terms and
+                        experience in full-stack development, embedded systems, application testing, and technical issue
+                        investigation. Building reliable software across web and embedded systems.</p>
                     <div class="home-actions">
                         <a class="btn-primary" href="#contact">Get in touch</a>
                         <a class="btn-secondary" href="#projects">View Projects</a>
@@ -812,7 +1148,7 @@
                     <div class="section-label">About Me</div>
                     <h2 class="section-heading" id="about-title">Building software with intention</h2>
                     <p class="about-text">
-                        I'm a <strong>junior Software Engineering student at Seneca Polytechnic</strong>.
+                        I'm a <strong>fourth-year Software Engineering student at Seneca Polytechnic</strong>.
                         I enjoy combining creativity and logic to build efficient, user-focused software.
                         Every project challenges me to think critically, collaborate, and deliver impactful solutions.
                     </p>
@@ -839,6 +1175,51 @@
         </div>
     </section>
 
+    <!-- EXPERIENCE -->
+    <section id="experience" aria-labelledby="experience-title">
+        <div class="container">
+            <div class="section-label">Experience</div>
+            <h2 class="section-heading" id="experience-title">Where I've worked</h2>
+            <p style="font-size:0.9rem;color:var(--txt-muted);">Two internship terms building and testing software in
+                production settings.</p>
+
+            <div class="experience-list">
+                <article class="experience-card">
+                    <div class="experience-head">
+                        <h3>Product Engineering Intern — GGF International</h3>
+                        <span class="experience-dates">June 2026 – Present</span>
+                    </div>
+                    <p class="experience-summary">Supporting feature planning and quality across a live platform,
+                        working across front-end and back-end feature work alongside QA testing, usability review, and
+                        cross-team reporting.</p>
+                    <ul class="experience-bullets">
+                        <li>Reviewed user flows and system behavior to flag usability issues, feeding recommendations
+                            back to product and engineering teams before release.</li>
+                        <li>Ran structured QA testing across web and mobile features, writing reproducible bug reports
+                            and confirming fixes before each release.</li>
+                        <li>Produced weekly performance reports summarizing platform and release data, helping keep
+                            cross-functional teams aligned on priorities each cycle.</li>
+                    </ul>
+                </article>
+                <article class="experience-card">
+                    <div class="experience-head">
+                        <h3>Full Stack Developer Intern — GGF International</h3>
+                        <span class="experience-dates">May 2025 – August 2025</span>
+                    </div>
+                    <p class="experience-summary">Built and validated backend features end-to-end, translating business
+                        requirements into working REST APIs across six Agile sprints.</p>
+                    <ul class="experience-bullets">
+                        <li>Designed and validated 4 REST API integration points, defining acceptance criteria and
+                            confirming behavior before release.</li>
+                        <li>Wrote structured test coverage that reduced reported bugs by approximately 30%, catching
+                            issues earlier in development.</li>
+                        <li>Invited back to GGF International for a second internship term based on this one.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- SKILLS -->
     <section id="skills" aria-labelledby="skills-title">
         <div class="container">
@@ -847,19 +1228,43 @@
                 <h2 class="section-heading" id="skills-title">Skills &amp; Technologies</h2>
             </div>
 
-            <div class="skills-grid">
-                <div class="skill-pill"><i class="devicon-python-plain colored"></i> Python</div>
-                <div class="skill-pill"><i class="devicon-c-plain colored"></i> C</div>
-                <div class="skill-pill"><i class="devicon-cplusplus-plain colored"></i> C++</div>
-                <div class="skill-pill"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
-                <div class="skill-pill"><i class="devicon-html5-plain colored"></i> HTML5</div>
-                <div class="skill-pill"><i class="devicon-css3-plain colored"></i> CSS3</div>
-                <div class="skill-pill"><i class="devicon-react-original colored"></i> React</div>
-                <div class="skill-pill"><i class="devicon-mysql-plain colored"></i> SQL</div>
-                <div class="skill-pill"><i class="devicon-git-plain colored"></i> Git</div>
-                <div class="skill-pill"><i class="devicon-tailwindcss-original colored"></i> Tailwind CSS</div>
-                <div class="skill-pill"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
-                <div class="skill-pill"><i class="devicon-github-original"></i> GitHub</div>
+            <div class="skill-group">
+                <div class="skill-group-label">Languages</div>
+                <div class="skill-pills">
+                    <div class="skill-pill"><i class="devicon-python-plain colored"></i> Python</div>
+                    <div class="skill-pill"><i class="devicon-mysql-plain colored"></i> SQL</div>
+                    <div class="skill-pill"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                    <div class="skill-pill"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+                    <div class="skill-pill"><i class="devicon-c-plain colored"></i> C</div>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-label">Web</div>
+                <div class="skill-pills">
+                    <div class="skill-pill"><i class="devicon-react-original colored"></i> React</div>
+                    <div class="skill-pill"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+                    <div class="skill-pill"><i class="fa-solid fa-flask" style="color:#888;"></i> Flask</div>
+                    <div class="skill-pill"><i class="devicon-html5-plain colored"></i> HTML</div>
+                    <div class="skill-pill"><i class="devicon-css3-plain colored"></i> CSS</div>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-label">Embedded</div>
+                <div class="skill-pills">
+                    <div class="skill-pill">FreeRTOS</div>
+                    <div class="skill-pill">ESP32</div>
+                    <div class="skill-pill">NXP FRDM-K66F</div>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-group-label">Tools</div>
+                <div class="skill-pills">
+                    <div class="skill-pill"><i class="devicon-git-plain colored"></i> Git</div>
+                    <div class="skill-pill"><i class="devicon-github-original"></i> GitHub</div>
+                    <div class="skill-pill"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+                    <div class="skill-pill">Excel</div>
+                </div>
             </div>
         </div>
     </section>
@@ -868,19 +1273,16 @@
     <section id="coursework">
         <div class="container">
             <div class="section-label">Academia</div>
-            <h2 class="section-heading">Relevant Coursework</h2>
-            <p style="font-size:0.9rem;color:var(--txt-muted);">Upper-year and core courses shaping my software engineering foundation</p>
+            <h2 class="section-heading">Education</h2>
+            <p class="education-degree"><strong>Bachelor of Software Engineering</strong> — Seneca Polytechnic, School
+                of Software Design &amp; Data Science. Expected graduation: 2027.</p>
 
-            <div class="courses-grid">
+
+             <div class="courses-grid">
                 <div class="course-card">
-                    <div class="course-code">SEP200</div>
-                    <div class="course-title">Object-Oriented Programming</div>
-                    <div class="course-description">Core OOP concepts including encapsulation, inheritance, polymorphism, UML modeling, and C++ STL.</div>
-                </div>
-                <div class="course-card">
-                    <div class="course-code">BTD210</div>
-                    <div class="course-title">Database Design Principles</div>
-                    <div class="course-description">Relational database design using ER diagrams and normalization, with SQL for querying and schema development.</div>
+                    <div class="course-code">SEH500</div>
+                    <div class="course-title">Microprocessors &amp; Computer Architecture</div>
+                    <div class="course-description">CPU architecture, assembly programming, embedded systems, and hardware-software integration.</div>
                 </div>
                 <div class="course-card">
                     <div class="course-code">SEP300</div>
@@ -893,21 +1295,6 @@
                     <div class="course-description">Implementation and analysis of core data structures emphasizing efficiency and computational complexity.</div>
                 </div>
                 <div class="course-card">
-                    <div class="course-code">SEP400</div>
-                    <div class="course-title">Operating Systems</div>
-                    <div class="course-description">Process scheduling, concurrency, memory management, inter-process communication, and system security.</div>
-                </div>
-                <div class="course-card">
-                    <div class="course-code">SEA400</div>
-                    <div class="course-title">Artificial Intelligence</div>
-                    <div class="course-description">State-space search, knowledge representation, logic-based reasoning, and probabilistic inference.</div>
-                </div>
-                <div class="course-card">
-                    <div class="course-code">SEA500</div>
-                    <div class="course-title">Introduction to Data Mining</div>
-                    <div class="course-description">Classification, clustering, and association rules with emphasis on model evaluation and interpretation.</div>
-                </div>
-                <div class="course-card">
                     <div class="course-code">SED500</div>
                     <div class="course-title">Introduction to Software Engineering</div>
                     <div class="course-description">End-to-end SDLC including requirements analysis, system design, testing, deployment, and maintenance.</div>
@@ -916,16 +1303,6 @@
                     <div class="course-code">SEE500</div>
                     <div class="course-title">Systems Requirements Engineering</div>
                     <div class="course-description">Requirements elicitation, modeling, and validation using agile and waterfall methodologies.</div>
-                </div>
-                <div class="course-card">
-                    <div class="course-code">SEH500</div>
-                    <div class="course-title">Microprocessors &amp; Computer Architecture</div>
-                    <div class="course-description">CPU architecture, assembly programming, embedded systems, and hardware-software integration.</div>
-                </div>
-                <div class="course-card">
-                    <div class="course-code">SED505</div>
-                    <div class="course-title">Design Patterns</div>
-                    <div class="course-description">GoF patterns, architectural patterns, and reusable object-oriented software solutions.</div>
                 </div>
                 <div class="course-card">
                     <div class="course-code">BTS535</div>
@@ -941,31 +1318,65 @@
         <div class="container">
             <div class="section-label">Selected Work</div>
             <h2 class="section-heading" id="projects-title">Top Projects</h2>
-            <p style="font-size:0.9rem;color:var(--txt-muted);margin-bottom:0;">A selection of things I've built recently.</p>
+            <p style="font-size:0.9rem;color:var(--txt-muted);margin-bottom:0;">A selection of things I've built
+                recently.</p>
 
             <div class="projects-layout">
                 <!-- Featured -->
                 <article class="project-featured">
                     <div class="project-thumb">
-                        <img src="images/wellness.png" alt="Student Wellness Platform" loading="lazy" />
+                        <img src="images/braille.jpg" alt="Smart Braille Learning and Translation Assistant"
+                            loading="lazy" />
                     </div>
                     <div class="project-body" style="display:flex;flex-direction:column;justify-content:center;">
+                        <div class="project-featured-badge"><i class="fa-solid fa-star"></i> Flagship Project</div>
                         <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Full-Stack</span>
+                            <span class="tag">C</span>
+                            <span class="tag">FreeRTOS</span>
+                            <span class="tag">Embedded Systems</span>
+                            <span class="tag">ESP32</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Gemini AI</span>
                         </div>
-                        <h3 class="project-title">Student Wellness Platform</h3>
-                        <p class="project-desc">A full-stack web application designed to help students track wellness habits like sleep, stress, and study time while connecting those patterns to academic performance. Built with React and a modern backend stack focused on clean UI and real-time insights.</p>
+                        <h3 class="project-title">Smart Braille Learning and Translation Assistant</h3>
+                        <p class="project-desc">An embedded assistive device built on the NXP FRDM-K66F that teaches and
+                            translates braille interactively. A 6-button grid mirrors the standard braille cell, an OLED
+                            and LED array mirror the pattern, and a DFPlayer Mini speaks each letter aloud. An ESP32
+                            bridges the device to a live Flask dashboard over WiFi, where Google Gemini analyzes quiz
+                            performance and generates personalized learning recommendations across translation, word
+                            formation, and quiz modes.</p>
                         <div class="project-links">
-                            <a class="link-btn link-btn-solid" href="https://github.com/abenezerbrh/student-wellness-platform" target="_blank" rel="noopener">View Code</a>
-                            <a class="link-btn link-btn-ghost" href="https://student-wellness-platform-beige.vercel.app/#" target="_blank" rel="noopener">Try It Out ↗</a>
+                            <a class="link-btn link-btn-solid" href="https://github.com/abenezerbrh/Braille-Assistant"
+                                target="_blank" rel="noopener">View Code</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Row of 2 -->
+                <!-- Row of 3 -->
                 <div class="project-row">
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="images/wellness.png" alt="Student Wellness Platform" loading="lazy" />
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">Full-Stack</span>
+                            </div>
+                            <h3 class="project-title">Student Wellness Platform</h3>
+                            <p class="project-desc">A full-stack app that tracks wellness habits like sleep, stress, and
+                                study time and connects those patterns to academic performance.</p>
+                            <div class="project-links">
+                                <a class="link-btn link-btn-solid"
+                                    href="https://github.com/abenezerbrh/student-wellness-platform" target="_blank"
+                                    rel="noopener">View Code</a>
+                                <a class="link-btn link-btn-ghost"
+                                    href="https://student-wellness-platform-beige.vercel.app/#" target="_blank"
+                                    rel="noopener">Try It Out ↗</a>
+                            </div>
+                        </div>
+                    </article>
                     <article class="project-card">
                         <div class="project-thumb">
                             <img src="images/pommy.png" alt="Pommy Pomodoro Timer" loading="lazy" />
@@ -977,10 +1388,13 @@
                                 <span class="tag">JavaScript</span>
                             </div>
                             <h3 class="project-title">Pommy</h3>
-                            <p class="project-desc">An aesthetic productivity pomodoro timer with adjustable focus and break sessions and theme switching.</p>
+                            <p class="project-desc">An aesthetic productivity pomodoro timer with adjustable focus and
+                                break sessions and theme switching.</p>
                             <div class="project-links">
-                                <a class="link-btn link-btn-solid" href="https://github.com/abenezerbrh/pommy" target="_blank" rel="noopener">View Code</a>
-                                <a class="link-btn link-btn-ghost" href="https://abenezerbrh.github.io/pommy/" target="_blank" rel="noopener">Try It Out ↗</a>
+                                <a class="link-btn link-btn-solid" href="https://github.com/abenezerbrh/pommy"
+                                    target="_blank" rel="noopener">View Code</a>
+                                <a class="link-btn link-btn-ghost" href="https://abenezerbrh.github.io/pommy/"
+                                    target="_blank" rel="noopener">Try It Out ↗</a>
                             </div>
                         </div>
                     </article>
@@ -994,10 +1408,14 @@
                                 <span class="tag">JavaScript</span>
                             </div>
                             <h3 class="project-title">Airline Travel Assistant</h3>
-                            <p class="project-desc">A modern travel booking platform that lets users easily search and book flights.</p>
+                            <p class="project-desc">A modern travel booking platform that lets users easily search and
+                                book flights.</p>
                             <div class="project-links">
-                                <a class="link-btn link-btn-solid" href="https://github.com/ZunayedAhmed7/Airline-Travel-Assistant" target="_blank" rel="noopener">View Code</a>
-                                <a class="link-btn link-btn-ghost" href="https://zunahmed79.pythonanywhere.com/" target="_blank" rel="noopener">Try It Out ↗</a>
+                                <a class="link-btn link-btn-solid"
+                                    href="https://github.com/ZunayedAhmed7/Airline-Travel-Assistant" target="_blank"
+                                    rel="noopener">View Code</a>
+                                <a class="link-btn link-btn-ghost" href="https://zunahmed79.pythonanywhere.com/"
+                                    target="_blank" rel="noopener">Try It Out ↗</a>
                             </div>
                         </div>
                     </article>
@@ -1015,7 +1433,8 @@
                     <h2 id="contact-title">Let's work<br>together</h2>
                     <p>Ask me anything or just say hi — I'd love to connect and explore opportunities.</p>
                     <a href="mailto:abenezerbrh@gmail.com" class="contact-email-link">abenezerbrh@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/abenezerbalcha" target="_blank" rel="noopener" class="contact-li-link">Connect on LinkedIn →</a>
+                    <a href="https://www.linkedin.com/in/abenezerbalcha" target="_blank" rel="noopener"
+                        class="contact-li-link">Connect on LinkedIn →</a>
                 </div>
 
                 <form action="https://formspree.io/f/xvgvzkwy" method="POST">
@@ -1044,7 +1463,8 @@
         <div class="footer-right">
             <a href="https://github.com/abenezerbrh" target="_blank" rel="noopener">GitHub</a>
             <a href="https://www.linkedin.com/in/abenezerbalcha" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://drive.google.com/file/d/1zr42w556R_aWiC3lhsdtLDWbJ4KPchQX/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+            <a href="https://drive.google.com/file/d/1zr42w556R_aWiC3lhsdtLDWbJ4KPchQX/view?usp=sharing" target="_blank"
+                rel="noopener">Resume</a>
         </div>
     </footer>
 
@@ -1063,4 +1483,5 @@
         sections.forEach(s => obs.observe(s));
     </script>
 </body>
+
 </html>
