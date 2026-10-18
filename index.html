@@ -106,7 +106,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2.5rem;
+            padding: 0 2rem;
             z-index: 100;
         }
 
@@ -194,11 +194,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 120px 2.5rem 80px;
+            padding: 120px 2rem 80px;
         }
 
         .container {
-            width: min(1100px, 100%);
+            width: min(1400px, 100%);
             margin-inline: auto;
         }
 
@@ -259,6 +259,45 @@
             animation: rise 0.7s ease forwards 0.55s;
         }
 
+        .home-now {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 2rem;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            color: var(--txt-dim);
+            opacity: 0;
+            animation: rise 0.7s ease forwards 0.7s;
+        }
+
+        .home-now strong {
+            color: var(--txt-muted);
+            font-weight: 400;
+        }
+
+        .now-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #5fd38d;
+            box-shadow: 0 0 0 0 rgba(95, 211, 141, 0.5);
+            animation: pulse 2.4s ease-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(95, 211, 141, 0.5);
+            }
+
+            70%,
+            100% {
+                box-shadow: 0 0 0 7px rgba(95, 211, 141, 0);
+            }
+        }
+
         .btn-primary {
             display: inline-block;
             padding: 11px 24px;
@@ -309,12 +348,10 @@
             aspect-ratio: 1 / 1;
             object-fit: cover;
             border-radius: 50%;
-            filter: grayscale(30%) contrast(1.05);
-            transition: filter 0.3s ease, transform 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .home-img:hover {
-            filter: grayscale(0%) contrast(1.1);
             transform: scale(1.02);
         }
 
@@ -366,13 +403,7 @@
             aspect-ratio: 4 / 3;
             object-fit: cover;
             border-radius: 12px;
-            filter: grayscale(60%) contrast(1.1);
-            transition: filter 0.4s ease;
             border: 1px solid var(--border);
-        }
-
-        .about-img:hover {
-            filter: grayscale(0%);
         }
 
         .section-label {
@@ -444,10 +475,6 @@
         #experience {
             background: var(--bg);
             border-bottom: 1px solid var(--border);
-        }
-
-        #experience .container {
-            width: min(900px, 100%);
         }
 
         .experience-list {
@@ -529,10 +556,6 @@
             border-bottom: 1px solid var(--border);
         }
 
-        #skills .container {
-            width: min(900px, 100%);
-        }
-
         .skills-header {
             margin-bottom: 2.5rem;
         }
@@ -598,7 +621,7 @@
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             min-height: auto;
-            padding: 100px 2.5rem;
+            padding: 100px 2rem;
         }
 
         .education-degree {
@@ -674,6 +697,91 @@
             color: var(--txt-muted);
         }
 
+        /* ─── CERTIFICATIONS ─── */
+        #certifications {
+            background: var(--bg);
+            min-height: auto;
+            padding: 100px 2rem;
+        }
+
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 3rem;
+        }
+
+        .cert-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-2);
+            transition: background 0.2s ease;
+        }
+
+        .cert-card:hover {
+            background: var(--bg-3);
+        }
+
+        .cert-thumb {
+            display: block;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-3);
+        }
+
+        .cert-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top left;
+            transition: transform 0.4s ease;
+        }
+
+        .cert-card:hover .cert-thumb img {
+            transform: scale(1.03);
+        }
+
+        .cert-body {
+            padding: 24px 26px 26px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .cert-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8px;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--txt-dim);
+            margin-bottom: 8px;
+        }
+
+        .cert-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--txt);
+            line-height: 1.4;
+            margin-bottom: 14px;
+        }
+
+        .cert-body .project-tags {
+            margin-bottom: 18px;
+        }
+
+        .cert-body .link-btn {
+            margin-top: auto;
+            align-self: flex-start;
+        }
+
         /* ─── PROJECTS ─── */
         #projects {
             background: var(--bg);
@@ -692,7 +800,7 @@
 
         .project-featured {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
             background: var(--bg-2);
             transition: background 0.2s ease;
         }
@@ -745,14 +853,23 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(40%);
-            transition: filter 0.4s ease, transform 0.4s ease;
+            transition: transform 0.4s ease;
         }
 
         .project-card:hover .project-thumb img,
         .project-featured:hover .project-thumb img {
-            filter: grayscale(0%);
             transform: scale(1.04);
+        }
+
+        /* Featured photo is portrait — show it whole instead of cropping to 16:9 */
+        .project-featured .project-thumb {
+            aspect-ratio: 941 / 1280;
+            border-bottom: none;
+            border-right: 1px solid var(--border);
+        }
+
+        .project-featured:hover .project-thumb img {
+            transform: none;
         }
 
         .project-body {
@@ -804,13 +921,19 @@
         }
 
         .link-btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
             padding: 8px 16px;
             font-size: 0.78rem;
             font-weight: 600;
             letter-spacing: 0.04em;
             border-radius: 5px;
             transition: all 0.2s ease;
+        }
+
+        .link-btn i {
+            font-size: 1.05rem;
         }
 
         .link-btn-solid {
@@ -962,7 +1085,7 @@
         footer {
             background: var(--bg);
             border-top: 1px solid var(--border);
-            padding: 28px 2.5rem;
+            padding: 28px 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1032,8 +1155,24 @@
                 grid-template-columns: 1fr;
             }
 
-            .project-row {
+            .project-featured .project-thumb {
+                max-height: 560px;
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .project-featured .project-thumb img {
+                object-fit: contain;
+            }
+
+            .project-row,
+            .certs-grid {
                 grid-template-columns: 1fr;
+            }
+
+            #certifications {
+                padding: 80px 1.5rem;
             }
 
             .skill-group {
@@ -1078,6 +1217,15 @@
                 animation: none !important;
                 transition: none !important;
             }
+
+            .home-eyebrow,
+            .home-title,
+            .home-desc,
+            .home-actions,
+            .home-now,
+            .home-img-wrap {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -1089,11 +1237,12 @@
         <div class="nav-logo">ab.<span>dev</span></div>
         <ul>
             <li><a href="#home" aria-current="page">Home</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#coursework">Courses</a></li>
+            <li><a href="#coursework">Education</a></li>
+            <li><a href="#certifications">Certs</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-social">
@@ -1129,9 +1278,59 @@
                             <i class="fab fa-github"></i> GitHub
                         </a>
                     </div>
+                    <p class="home-now"><span class="now-dot" aria-hidden="true"></span>
+                        <span>Now — <strong>exploring automation</strong> &amp; <strong>building a homelab</strong></span>
+                    </p>
                 </div>
                 <div class="home-img-wrap" aria-hidden="true">
                     <img src="images/me.png" alt="" class="home-img" loading="eager" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <img src="images/seneca.png" alt="Seneca Polytechnic campus" class="about-img" loading="lazy" />
+                </div>
+                <div>
+                    <div class="section-label">About Me</div>
+                    <h2 class="section-heading" id="about-title">Building software with intention</h2>
+                    <p class="about-text">
+                        I'm a <strong>fourth-year Software Engineering student at Seneca Polytechnic</strong>,
+                        working where hardware meets the web. I build <strong>embedded systems</strong> in C and
+                        FreeRTOS and <strong>full-stack applications</strong> with React, Flask, and PostgreSQL,
+                        and I've spent two internship terms at GGF International shipping and testing features
+                        on a live platform. Lately I've been sharpening my <strong>data analytics</strong> skills
+                        through industry job simulations with Deloitte and BCG X.
+                    </p>
+                    <p class="about-text" style="margin-top:1rem;">
+                        Outside of that, I'm most interested in <strong>automation</strong>: if I do something
+                        twice, I start looking for a way to script it. I'm also building out a
+                        <strong>homelab</strong> as my sandbox for experimenting with servers, networking, and
+                        infrastructure.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Internship Terms</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">~30%</div>
+                            <div class="stat-label">Fewer Reported Bugs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">REST APIs Shipped</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1149,7 +1348,7 @@
                 <article class="experience-card">
                     <div class="experience-head">
                         <h3>Product Engineering Intern — GGF International</h3>
-                        <span class="experience-dates">June 2026 – Present</span>
+                        <span class="experience-dates">June 2026 – August 2026</span>
                     </div>
                     <p class="experience-summary">Supporting feature planning and quality across a live platform,
                         working across front-end and back-end feature work alongside QA testing, usability review, and
@@ -1216,7 +1415,7 @@
                             formation, and quiz modes.</p>
                         <div class="project-links">
                             <a class="link-btn link-btn-solid" href="https://github.com/abenezerbrh/Braille-Assistant"
-                                target="_blank" rel="noopener">View Code</a>
+                                target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View Code</a>
                         </div>
                     </div>
                 </article>
@@ -1239,7 +1438,7 @@
                             <div class="project-links">
                                 <a class="link-btn link-btn-solid"
                                     href="https://github.com/abenezerbrh/student-wellness-platform" target="_blank"
-                                    rel="noopener">View Code</a>
+                                    rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View Code</a>
                                 <a class="link-btn link-btn-ghost"
                                     href="https://student-wellness-platform-beige.vercel.app/#" target="_blank"
                                     rel="noopener">Try It Out ↗</a>
@@ -1261,7 +1460,7 @@
                                 break sessions and theme switching.</p>
                             <div class="project-links">
                                 <a class="link-btn link-btn-solid" href="https://github.com/abenezerbrh/pommy"
-                                    target="_blank" rel="noopener">View Code</a>
+                                    target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View Code</a>
                                 <a class="link-btn link-btn-ghost" href="https://abenezerbrh.github.io/pommy/"
                                     target="_blank" rel="noopener">Try It Out ↗</a>
                             </div>
@@ -1282,7 +1481,7 @@
                             <div class="project-links">
                                 <a class="link-btn link-btn-solid"
                                     href="https://github.com/ZunayedAhmed7/Airline-Travel-Assistant" target="_blank"
-                                    rel="noopener">View Code</a>
+                                    rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View Code</a>
                                 <a class="link-btn link-btn-ghost" href="https://zunahmed79.pythonanywhere.com/"
                                     target="_blank" rel="noopener">Try It Out ↗</a>
                             </div>
@@ -1292,45 +1491,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ABOUT -->
-    <section id="about" aria-labelledby="about-title">
-        <div class="container">
-            <div class="about-grid">
-                <div>
-                    <img src="images/seneca.png" alt="Seneca Polytechnic campus" class="about-img" loading="lazy" />
-                </div>
-                <div>
-                    <div class="section-label">About Me</div>
-                    <h2 class="section-heading" id="about-title">Building software with intention</h2>
-                    <p class="about-text">
-                        I'm a <strong>fourth-year Software Engineering student at Seneca Polytechnic</strong>.
-                        I enjoy combining creativity and logic to build efficient, user-focused software.
-                        Every project challenges me to think critically, collaborate, and deliver impactful solutions.
-                    </p>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number">12+</div>
-                            <div class="stat-label">Courses Completed</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Technologies</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">05+</div>
-                            <div class="stat-label">Projects Built</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Dedication</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
 
     <!-- SKILLS -->
@@ -1428,6 +1588,50 @@
                     <div class="course-description">Agile and classical practices including Scrum, Kanban, risk
                         management, and quality assurance.</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" aria-labelledby="certifications-title">
+        <div class="container">
+            <div class="section-label">Credentials</div>
+            <h2 class="section-heading" id="certifications-title">Certifications</h2>
+            <p style="font-size:0.9rem;color:var(--txt-muted);">Industry job simulations completed through Forage.</p>
+
+            <div class="certs-grid">
+                <article class="cert-card">
+                    <a class="cert-thumb" href="certs/data_analytics_certificate.png" target="_blank" rel="noopener"
+                        aria-label="View Deloitte Data Analytics certificate">
+                        <img src="certs/data_analytics_certificate.png" alt="" loading="lazy" />
+                    </a>
+                    <div class="cert-body">
+                        <div class="cert-meta"><span>Deloitte · Forage</span><span>Jul 2026</span></div>
+                        <h3 class="cert-title">Data Analytics Job Simulation</h3>
+                        <div class="project-tags">
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Forensic Technology</span>
+                        </div>
+                        <a class="link-btn link-btn-ghost" href="certs/data_analytics_certificate.png" target="_blank"
+                            rel="noopener">View Certificate ↗</a>
+                    </div>
+                </article>
+                <article class="cert-card">
+                    <a class="cert-thumb" href="certs/data_certificate.png" target="_blank" rel="noopener"
+                        aria-label="View BCG X Introduction to Data for Decision Makers certificate">
+                        <img src="certs/data_certificate.png" alt="" loading="lazy" />
+                    </a>
+                    <div class="cert-body">
+                        <div class="cert-meta"><span>BCG X · Forage</span><span>Jul 2026</span></div>
+                        <h3 class="cert-title">Introduction to Data for Decision Makers Job Simulation</h3>
+                        <div class="project-tags">
+                            <span class="tag">Campaign Performance Analysis</span>
+                            <span class="tag">Communicating Findings</span>
+                        </div>
+                        <a class="link-btn link-btn-ghost" href="certs/data_certificate.png" target="_blank"
+                            rel="noopener">View Certificate ↗</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
