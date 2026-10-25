@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Abenezer Balcha | Software Engineer</title>
+    <title>Abenezer Balcha | IT Support &amp; Infrastructure</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -216,7 +216,7 @@
 
         .home-eyebrow {
             font-family: 'DM Mono', monospace;
-            font-size: 0.78rem;
+            font-size: 1.0rem;
             color: var(--txt-muted);
             letter-spacing: 0.12em;
             text-transform: uppercase;
@@ -251,6 +251,11 @@
             animation: rise 0.7s ease forwards 0.4s;
         }
 
+        .home-desc strong {
+            color: var(--txt);
+            font-weight: 500;
+        }
+
         .home-actions {
             display: flex;
             gap: 12px;
@@ -275,6 +280,17 @@
         .home-now strong {
             color: var(--txt-muted);
             font-weight: 400;
+        }
+
+        .home-now a {
+            color: var(--txt-muted);
+            border-bottom: 1px solid var(--border-light);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .home-now a:hover {
+            color: var(--txt);
+            border-color: var(--txt);
         }
 
         .now-dot {
@@ -861,14 +877,29 @@
             transform: scale(1.04);
         }
 
-        /* Featured photo is portrait — show it whole instead of cropping to 16:9 */
+        /* Featured image and the braille photo are shown whole, never cropped */
         .project-featured .project-thumb {
-            aspect-ratio: 941 / 1280;
+            aspect-ratio: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
             border-bottom: none;
             border-right: 1px solid var(--border);
         }
 
-        .project-featured:hover .project-thumb img {
+        .project-featured .project-thumb img {
+            height: auto;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        .project-thumb--whole img {
+            object-fit: contain;
+        }
+
+        .project-featured:hover .project-thumb img,
+        .project-card:hover .project-thumb--whole img {
             transform: none;
         }
 
@@ -913,6 +944,16 @@
             line-height: 1.7;
             color: var(--txt-muted);
             margin-bottom: 20px;
+        }
+
+        .project-desc code {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.85em;
+            color: var(--txt);
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 1px 5px;
         }
 
         .project-links {
@@ -1156,14 +1197,8 @@
             }
 
             .project-featured .project-thumb {
-                max-height: 560px;
-                width: 100%;
                 border-right: none;
                 border-bottom: 1px solid var(--border);
-            }
-
-            .project-featured .project-thumb img {
-                object-fit: contain;
             }
 
             .project-row,
@@ -1266,11 +1301,13 @@
         <div class="container">
             <div class="home-grid">
                 <div>
-                    <div class="home-eyebrow">Hey, I'm Abenezer —</div>
-                    <h1 class="home-title" id="home-title">Software Engineering<br><em>Student</em></h1>
-                    <p class="home-desc">Fourth-year Software Engineering student with two internship terms and
-                        experience in full-stack development, embedded systems, application testing, and technical issue
-                        investigation. Building reliable software across web and embedded systems.</p>
+                    <div class="home-eyebrow">Hey, I'm Abenezer — Software Engineering Student</div>
+                    <h1 class="home-title" id="home-title">Systems, Support<br><em>&amp; Infrastructure</em></h1>
+                    <p class="home-desc">Fourth-year Software Engineering student seeking roles as an
+                        <strong>IT Support Analyst</strong>, <strong>Service Desk Analyst</strong>, or
+                        <strong>Junior Systems Administrator</strong>. Two internship terms of issue triage, QA testing,
+                        and technical investigation, plus a hands-on homelab where I troubleshoot networks from the
+                        packet level up.</p>
                     <div class="home-actions">
                         <a class="btn-primary" href="#contact">Get in touch</a>
                         <a class="btn-secondary" href="#projects">View Projects</a>
@@ -1279,7 +1316,8 @@
                         </a>
                     </div>
                     <p class="home-now"><span class="now-dot" aria-hidden="true"></span>
-                        <span>Now — <strong>exploring automation</strong> &amp; <strong>building a homelab</strong></span>
+                        <span>Now — <a href="https://github.com/abenezerbrh/homelab" target="_blank"
+                                rel="noopener">running homelab01</a>: Ubuntu, Pi-hole, Tailscale</span>
                     </p>
                 </div>
                 <div class="home-img-wrap" aria-hidden="true">
@@ -1298,7 +1336,7 @@
                 </div>
                 <div>
                     <div class="section-label">About Me</div>
-                    <h2 class="section-heading" id="about-title">Building software with intention</h2>
+                    <h2 class="section-heading" id="about-title">From software to systems.</h2>
                     <p class="about-text">
                         I'm a <strong>fourth-year Software Engineering student at Seneca Polytechnic</strong>,
                         working where hardware meets the web. I build <strong>embedded systems</strong> in C and
@@ -1308,10 +1346,10 @@
                         through industry job simulations with Deloitte and BCG X.
                     </p>
                     <p class="about-text" style="margin-top:1rem;">
-                        Outside of that, I'm most interested in <strong>automation</strong>: if I do something
-                        twice, I start looking for a way to script it. I'm also building out a
-                        <strong>homelab</strong> as my sandbox for experimenting with servers, networking, and
-                        infrastructure.
+                        Outside of that, I'm focused on <strong>infrastructure and automation</strong>: if I do
+                        something twice, I start looking for a way to script it. I run an <strong>Ubuntu
+                        homelab</strong> that I manage over SSH and Tailscale, where I capture and analyze traffic
+                        with tcpdump and Wireshark, run Pi-hole for DNS, and script network triage in PowerShell.
                     </p>
                     <div class="stats-grid">
                         <div class="stat-card">
@@ -1396,35 +1434,60 @@
                 <!-- Featured -->
                 <article class="project-featured">
                     <div class="project-thumb">
-                        <img src="images/braille.jpg" alt="Smart Braille Learning and Translation Assistant"
+                        <img src="images/homelab-diagram.png"
+                            alt="Homelab network diagram: Internet to router, with homelab01 running Pi-hole and a Windows laptop connected over Wi-Fi"
                             loading="lazy" />
                     </div>
                     <div class="project-body" style="display:flex;flex-direction:column;justify-content:center;">
                         <div class="project-featured-badge"><i class="fa-solid fa-star"></i> Flagship Project</div>
                         <div class="project-tags">
-                            <span class="tag">C</span>
-                            <span class="tag">FreeRTOS</span>
-                            <span class="tag">Embedded Systems</span>
-                            <span class="tag">ESP32</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">Gemini AI</span>
+                            <span class="tag">Ubuntu</span>
+                            <span class="tag">Networking</span>
+                            <span class="tag">Wireshark</span>
+                            <span class="tag">tcpdump</span>
+                            <span class="tag">Pi-hole</span>
+                            <span class="tag">Tailscale</span>
+                            <span class="tag">PowerShell</span>
                         </div>
-                        <h3 class="project-title">Smart Braille Learning and Translation Assistant</h3>
-                        <p class="project-desc">An embedded assistive device built on the NXP FRDM-K66F that teaches and
-                            translates braille interactively. A 6-button grid mirrors the standard braille cell, an OLED
-                            and LED array mirror the pattern, and a DFPlayer Mini speaks each letter aloud. An ESP32
-                            bridges the device to a live Flask dashboard over WiFi, where Google Gemini analyzes quiz
-                            performance and generates personalized learning recommendations across translation, word
-                            formation, and quiz modes.</p>
+                        <h3 class="project-title">Homelab: Network Discovery &amp; Troubleshooting</h3>
+                        <p class="project-desc">An Ubuntu server (homelab01) I manage over SSH to learn how networks work
+                            at the packet level. I documented its IP, gateway, DNS and ARP setup, captured full DHCP, ARP
+                            and DNS exchanges with tcpdump and Wireshark, and traced DNS through Pi-hole to Cloudflare.
+                            Along the way I broke and fixed DNS on purpose, fixed a clock-sync issue breaking
+                            <code>apt</code>, set up Tailscale for remote access, wrote a post-mortem after locking myself
+                            out over the VPN, and built a PowerShell triage script that checks each network layer and
+                            names where it breaks.</p>
                         <div class="project-links">
-                            <a class="link-btn link-btn-solid" href="https://github.com/abenezerbrh/Braille-Assistant"
-                                target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View Code</a>
+                            <a class="link-btn link-btn-solid" href="https://github.com/abenezerbrh/homelab"
+                                target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View Write-up</a>
                         </div>
                     </div>
                 </article>
 
                 <!-- Row of 3 -->
                 <div class="project-row">
+                    <article class="project-card">
+                        <div class="project-thumb project-thumb--whole">
+                            <img src="images/braille.jpg" alt="Smart Braille Learning and Translation Assistant"
+                                loading="lazy" />
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">C</span>
+                                <span class="tag">FreeRTOS</span>
+                                <span class="tag">ESP32</span>
+                                <span class="tag">Flask</span>
+                            </div>
+                            <h3 class="project-title">Smart Braille Assistant</h3>
+                            <p class="project-desc">An embedded device on the NXP FRDM-K66F that teaches and translates
+                                braille, with a live Flask dashboard over an ESP32 where Gemini AI recommends what to
+                                practice next.</p>
+                            <div class="project-links">
+                                <a class="link-btn link-btn-solid" href="https://github.com/abenezerbrh/Braille-Assistant"
+                                    target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View Code</a>
+                            </div>
+                        </div>
+                    </article>
                     <article class="project-card">
                         <div class="project-thumb">
                             <img src="images/wellness.png" alt="Student Wellness Platform" loading="lazy" />
@@ -1469,27 +1532,6 @@
                             </div>
                         </div>
                     </article>
-                    <article class="project-card">
-                        <div class="project-thumb">
-                            <img src="images/flight.png" alt="Airline Travel Assistant" loading="lazy" />
-                        </div>
-                        <div class="project-body">
-                            <div class="project-tags">
-                                <span class="tag">Flask</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
-                            <h3 class="project-title">Airline Travel Assistant</h3>
-                            <p class="project-desc">A modern travel booking platform that lets users easily search and
-                                book flights.</p>
-                            <div class="project-links">
-                                <a class="link-btn link-btn-solid"
-                                    href="https://github.com/ZunayedAhmed7/Airline-Travel-Assistant" target="_blank"
-                                    rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View Code</a>
-                                <a class="link-btn link-btn-ghost" href="https://zunahmed79.pythonanywhere.com/"
-                                    target="_blank" rel="noopener">Try It Out ↗</a>
-                            </div>
-                        </div>
-                    </article>
                 </div>
             </div>
         </div>
@@ -1505,8 +1547,21 @@
             </div>
 
             <div class="skill-group">
+                <div class="skill-group-label">Infra &amp; Networking</div>
+                <div class="skill-pills">
+                    <div class="skill-pill"><i class="devicon-ubuntu-plain colored"></i> Linux (Ubuntu)</div>
+                    <div class="skill-pill"><i class="fa-solid fa-terminal" style="color:#888;"></i> SSH</div>
+                    <div class="skill-pill"><i class="fa-solid fa-network-wired" style="color:#888;"></i> TCP/IP</div>
+                    <div class="skill-pill">DHCP · DNS · ARP</div>
+                    <div class="skill-pill">Wireshark / tcpdump</div>
+                    <div class="skill-pill">Tailscale</div>
+                    <div class="skill-pill">Pi-hole</div>
+                </div>
+            </div>
+            <div class="skill-group">
                 <div class="skill-group-label">Languages</div>
                 <div class="skill-pills">
+                    <div class="skill-pill"><i class="devicon-powershell-plain colored"></i> PowerShell</div>
                     <div class="skill-pill"><i class="devicon-python-plain colored"></i> Python</div>
                     <div class="skill-pill"><i class="devicon-mysql-plain colored"></i> SQL</div>
                     <div class="skill-pill"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
